@@ -5,8 +5,13 @@ import { Link } from "react-router-dom";
 import TopLoader from "react-top-loader";
 import { useEffect } from "react";
 import styles from "./Lister.css"
+import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
 export default function Lister({
+
+  
+
+
   Checked1,
   Checked2,
   Checked3,
@@ -26,7 +31,14 @@ export default function Lister({
   
 }) {
 
- 
+  const [text] = useTypewriter({
+    words: ['Questions','Problems','Challenges'],
+    loop: {},
+    typeSpeed: 170,
+    deleteSpeed:50,
+    delaySpeed: 1000,
+
+  })
 
  
 let counter=0;
@@ -74,13 +86,14 @@ setcount(counter);
   }
   return (
     <div >
-      <h1 className="text-5xl text-center font-extrabold bg-gradient-to-br from-red-500 to-purple-600 text-transparent bg-clip-text mt-24  flex justify-center sm:text-6xl">100 DSA Questions</h1>
-      <h3 className="text-3xl sm:text-4xl mt-3 text-purple-800 align-items-center text-center  flex justify-center">
-        Crack Product based companies today
-      </h3>
+      
+        <h1 className="text-5xl text-center font-extrabold mt-24 flex flex-wrap justify-center align-middle sm:text-6xl "><span className="pb-3 bg-gradient-to-br from-red-500 to-purple-600 text-transparent bg-clip-text">100 DSA</span><span className="ml-4 pb-3 bg-gradient-to-r from-red-400 to-red-800 text-transparent bg-clip-text inline-block sm:ml-4 sm:inline">{text}</span><span className="text-red-600 text-5xl relative top-2 inline-block sm:ml-4 sm:inline"><Cursor cursorStyle="|" delaySpeed={1000} /></span></h1>
+        <h3 className="text-3xl sm:text-4xl mt-4 text-purple-600 align-items-center text-center  flex justify-center">
+             Crack Product based companies today
+        </h3>
+      
 
-
-<div className={"lg:ml-52 lg:mr-52 md:ml-52 md:mr-52 ml-24 mr-24 "} style={containerStyles}>
+    <div className={"lg:ml-52 lg:mr-52 md:ml-52 md:mr-52 ml-24 mr-24 "} style={containerStyles}>
       <div style={fillerStyles}>
         <span style={labelStyles}>{`${count }% `}</span> 
         
@@ -103,20 +116,20 @@ setcount(counter);
         
       </div>
       <div className="mb-10">
-        <div className="flex justify-around align-middle gap-8">
+        <div className=" mb-3 flex justify-center text-center align-middle gap-3 sm:gap-8 flex-col sm:flex-row sm:justify-around">
          
           <Link
             target="_blank"
-            className=" text-blue-500 font-nunito "
+            className=" font-nunito"
             to="https://www.linkedin.com/in/piyushshuklak"
           >
-             <p className="text-white font-nunito inline"> Linkedin :</p>
+             <p className="font-nunito inline"> Linkedin :</p>
             {" "}
-            Piyush Kumar Shukla 
+            <span className="text-blue-400">Piyush Kumar Shukla </span>
           </Link>
           <Link
             target="_blank"
-            className="text-white"
+            className=""
             to="https://github.com/hackerworld25"
           >
             Github: <span className="text-sky-600">Github/hacker26{" "}</span>
